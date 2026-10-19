@@ -1,0 +1,680 @@
+/* ==========================================================================
+   1. RESET & VARIÁVEIS DE DESIGN PREMIUM (UX/UI SKINMETRICS)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080a10; /* Grafite Quente Premium — tom clínico e luxuoso */
+    color: #f1f5f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. HEADER (EFEITO BORDA FLUIDA E BLUR PREMIUM)
+   ========================================================================== */
+.header {
+    border-bottom: 1px solid #1e2433; /* Cinza Clínico Suave */
+    background-color: rgba(8, 10, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 80px;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+.logo-dot {
+    color: #936bf2; /* Tom de IA Médica e Sofisticação */
+}
+
+.badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    background-color: rgba(147, 107, 242, 0.1);
+    color: #a78bfa;
+    border: 1px solid rgba(147, 107, 242, 0.2);
+    border-radius: 9999px;
+}
+
+/* ==========================================================================
+   3. HERO GRID & MARKETING COPY (RESPONSIVIDADE COMPUTAÇÃO)
+   ========================================================================== */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+@media (min-width: 992px) {
+    .main-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 64px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+.hero-text {
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .hero-text {
+        text-align: left;
+    }
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background-color: #111625;
+    border: 1px solid #1e2433;
+    border-radius: 9999px;
+    font-size: 12px;
+    color: #a5b1c2; /* Pó de Pérola */
+    margin-bottom: 24px;
+}
+
+.tag-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #936bf2;
+    border-radius: 50%;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 576px) {
+    .hero-text h1 { font-size: 46px; }
+}
+
+.gradient-text {
+    /* Gradiente luxuoso que simula o brilho saudável da pele tratada (Glow) */
+    background: linear-gradient(90deg, #ffd1dc, #e1beet, #fad02c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 16px;
+    color: #a5b1c2;
+    max-width: 540px;
+    margin: 0 auto 32px auto;
+    line-height: 1.6;
+}
+
+@media (min-width: 992px) {
+    .hero-text p {
+        margin-left: 0;
+    }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 340px;
+    padding: 16px 32px;
+    background: linear-gradient(90deg, #7c3aed, #936bf2);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px -5px rgba(147, 107, 242, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(147, 107, 242, 0.5);
+}
+
+/* ==========================================================================
+   4. SMARTPHONE PRINCIPAL (MOCKUP HERO DOCK)
+   ========================================================================== */
+.hero-app {
+    display: flex;
+    justify-content: center;
+}
+
+.phone {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 19;
+    background: linear-gradient(180deg, #111625 0%, #080a10 100%);
+    border: 6px solid #1e2433;
+    border-radius: 40px;
+    padding: 16px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(147, 107, 242, 0.1);
+}
+
+.phone-notch {
+    width: 110px;
+    height: 16px;
+    background-color: #1e2433;
+    border-radius: 9999px;
+    margin: 0 auto 16px auto;
+}
+
+.phone-screen {
+    height: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+}
+
+/* Elementos Dinâmicos Injetados pelo script.js */
+.ai-orb {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px dashed #1e2433;
+    background-color: rgba(8, 10, 16, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.app-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.app-subtitle {
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Estilo do Caixa do Scanner Ativo */
+.camera-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #080a10;
+    border: 1px solid #1e2433;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.scan-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #936bf2, transparent);
+    position: absolute;
+    animation: scanAnimation 2s ease-in-out infinite;
+    box-shadow: 0 0 10px #936bf2;
+}
+
+@keyframes scanAnimation {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(147, 107, 242, 0.2);
+    border-top-color: #936bf2;
+    border-radius: 50%;
+    animation: spinAnimation 0.8s linear infinite;
+    margin-bottom: 8px;
+}
+
+@keyframes spinAnimation {
+    to { transform: rotate(360deg); }
+}
+
+.pulse-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a78bfa;
+    animation: pulseAnimation 1.5s infinite;
+}
+
+@keyframes pulseAnimation {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Erro Estratégico e Entrada de Leads */
+.error-icon {
+    color: #f59e0b;
+    margin-bottom: 8px;
+}
+
+.error-desc {
+    font-size: 11px;
+    color: #a5b1c2;
+    line-height: 1.4;
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+.lead-form {
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 12px;
+    background-color: #111625;
+    border: 1px solid #1e2433;
+    border-radius: 8px;
+    color: #ffffff;
+    outline: none;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: #936bf2;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #7c3aed, #936bf2);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(147, 107, 242, 0.2);
+}
+
+.success-icon {
+    color: #10b981;
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE RECURSOS (HIGH-FIDELITY APP MOCKUPS - RESPONSIVO)
+   ========================================================================== */
+.features-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: linear-gradient(180deg, #fdfbf7 0%, #f5f2eb 100%);
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    margin: 48px 0;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.features-header h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.features-header .subtitle {
+    color: #475569;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+@media (min-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+}
+
+.feature-info h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.feature-info p {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* SMARTPHONE DE ALTA FIDELIDADE (UI APPLE HEALTH LOOK) */
+.mini-phone {
+    width: 175px;
+    height: 310px;
+    background-color: #0d1117;
+    border: 6px solid #1f2937;
+    border-radius: 28px;
+    padding: 0;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.3);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra Superior do Smartphone */
+.phone-top-bar {
+    height: 18px;
+    background-color: #0d1117;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-family: monospace;
+    font-size: 8px;
+    color: #9ca3af;
+}
+
+.mini-screen {
+    flex: 1;
+    background-color: #080a10;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-internal-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 10px;
+    border-left: 2px solid #936bf2;
+    padding-left: 4px;
+}
+
+/* Barra de Navegação Inferior do App */
+.app-nav-bar {
+    height: 24px;
+    background-color: #111625;
+    border-top: 1px solid #1f2937;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+}
+
+.app-nav-bar span {
+    font-size: 10px;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.app-nav-bar span.active {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #936bf2);
+}
+
+/* UI 1: COMPARAÇÃO NATIVA REALISTA */
+.split-container {
+    display: flex;
+    height: 190px;
+    gap: 2px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.split-photo {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 4px;
+}
+
+/* Gradientes quentes que simulam texturas de pele realistas e saudáveis */
+.left-photo { background: linear-gradient(180deg, #fbcfe8 0%, #f472b6 100%); }
+.right-photo { background: linear-gradient(180deg, #fed7aa 0%, #fb923c 100%); }
+
+.photo-badge {
+    background-color: rgba(0,0,0,0.6);
+    color: #ffffff;
+    font-size: 7px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+.metrics-overlay {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.met-tag {
+    font-size: 7px;
+    font-weight: 700;
+    padding: 2px;
+    border-radius: 3px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.label-red { background-color: rgba(220, 38, 38, 0.85); }
+.label-green { background-color: rgba(22, 163, 74, 0.85); }
+
+/* UI 2: HISTÓRICO GRÁFICO E LEMBRETES */
+.mini-graph-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+}
+
+.graph-bar-hf {
+    width: 22px;
+    background-color: #111625;
+    border: 1px solid #1f2937;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+    position: relative;
+}
+
+.graph-bar-hf.active {
+    background: linear-gradient(180deg, #936bf2 0%, #7c3aed 100%);
+    border-color: #a78bfa;
+}
+
+.graph-bar-hf .val { font-size: 6px; color: #9ca3af; font-weight: 700; }
+.graph-bar-hf.active .val { color: #ffffff; }
+
+.graph-bar-hf .lbl {
+    font-size: 6px;
+    color: #6b7280;
+    position: absolute;
+    bottom: -14px;
+    width: 100%;
+    text-align: center;
+}
+
+.graph-bar-hf.active .lbl { color: #a78bfa; font-weight: 700; }
+
+/* Widget de Notificação de Rotina Interno */
+.app-notification-card {
+    background-color: #111625;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-align: left;
+}
+
+.notif-bell { font-size: 10px; }
+.notif-text { display: flex; flex-direction: column; }
+.notif-title { font-size: 8px; font-weight: 700; color: #ffffff; }
+.notif-desc { font-size: 7px; color: #9ca3af; }
+
+/* UI 3: LAUDO PDF MÉDICO REALISTA */
+.pdf-screen-hf {
+    justify-content: flex-start;
+}
+
+.pdf-document-mock {
+    background-color: #ffffff;
+    color: #111827;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    margin-bottom: 12px;
+}
+
+.pdf-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.pdf-logo-text { font-size: 7px; font-weight: 900; color: #7c3aed; }
+.pdf-date { font-size: 5px; color: #9ca3af; }
+.pdf-patient { font-size: 7px; font-weight: 700; margin-bottom: 4px; }
+.pdf-mini-row { font-size: 7px; margin-bottom: 6px; }
+
+.pdf-line-placeholder {
+    width: 100%;
+    height: 3px;
+    background-color: #f3f4f6;
+    border-radius: 1px;
+    margin-bottom: 3px;
+}
+.pdf-line-placeholder.short { width: 50%; }
+
+.app-action-btn-hf {
+    width: 100%;
+    padding: 8px;
+    background: linear-gradient(90deg, #7c3aed, #936bf2);
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+.footer {
+    border-top: 1px solid #1e2433;
+    padding: 32px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+    background-color: #080a10;
+}

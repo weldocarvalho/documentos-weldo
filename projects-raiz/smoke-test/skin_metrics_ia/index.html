@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinMetrics.AI - Análise Científica de Pele</title>
+    <!-- O CSS completo e a lógica JS virão na sequência para não estourar o chat -->
+    <link rel="stylesheet" href="style.css">
+
+        <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f.fbq)f.fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://facebook.net');
+      fbq('init', 'SEU_ID_DO_PIXEL_AQUI');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://facebook.com"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <span class="logo">SkinMetrics<span class="logo-dot">.AI</span></span>
+            <span class="badge">Acesso Restrito</span>
+        </div>
+    </header>
+
+    <main class="container main-grid">
+        <section class="hero-text">
+            <div class="tag">
+                <span class="tag-dot"></span> Visão Computacional Aplicada
+            </div>
+            <h1>Pare de adivinhar.<br><span class="gradient-text">Meça a verdade</span> sobre a sua pele.</h1>
+            <p>Nossa inteligência artificial analisa 12 bio-indicadores dérmicos através da câmera do seu celular. Descubra o que realmente funciona antes de gastar com o próximo cosmético.</p>
+            <button onclick="startAnalysis()" class="btn">Escanear Minha Pele Agora</button>
+        </section>
+
+        <section class="hero-app">
+            <div class="phone">
+                <div class="phone-notch"></div>
+                <div id="appInterface" class="phone-screen">
+                    <!-- Injeção dinâmica via script.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="container copy-section">
+        <h2>O Fim das Promessas Milagrosas</h2>
+        <p class="subtitle">Não prometemos pele perfeita em uma semana. Entregamos engenharia de dados para compras conscientes.</p>
+        <div class="cards-grid">
+            <div class="card card-rose">
+                <h3>O que NÃO fazemos:</h3>
+                <p>Não substituímos consultas médicas, não receitamos remédios e não vendemos fórmulas milagrosas secretas.</p>
+            </div>
+            <div class="card card-indigo">
+                <h3>O que FAZEMOS:</h3>
+                <p>Mapeia evolução de poros, calcula taxas de oleosidade por zona facial e gera relatórios precisos via IA.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 SkinMetrics.AI — Tecnologia de Análise Pessoal. Totalmente em conformidade com a LGPD.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
