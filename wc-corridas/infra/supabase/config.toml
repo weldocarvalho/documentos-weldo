@@ -1,0 +1,2 @@
+[functions.landing-lead]
+verify_jwt = false

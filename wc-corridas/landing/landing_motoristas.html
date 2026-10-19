@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pré-cadastro de motoristas | [MARCA] São Sebastião</title>
+<meta name="description" content="Pré-cadastro para motoristas de aplicativo de São Sebastião (DF). Lançamento em novembro. Plataforma por assinatura mensal.">
+<style>
+:root{--bg:#0b1220;--card:#121a2d;--ink:#f4f7fb;--mut:#9fb0c9;--acc:#22c55e;--acc2:#16a34a;--line:#22304d;--warn:#fbbf24;--bad:#f87171}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+header{padding:16px 0;font-weight:800;letter-spacing:.3px}
+header span{color:var(--acc)}
+h1{font-size:clamp(1.7rem,7vw,2.4rem);line-height:1.15;margin:12px 0}
+h1 em{font-style:normal;color:var(--acc)}
+h2{font-size:1.3rem;margin:0 0 8px}
+p{margin:0 0 12px}
+.mut{color:var(--mut)}
+.btn{display:block;width:100%;background:var(--acc);color:#04210f;border:0;border-radius:12px;padding:16px;font-size:1.05rem;font-weight:800;text-align:center;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--acc2)}
+.btn[disabled]{opacity:.6;cursor:wait}
+section{padding:28px 0;border-top:1px solid var(--line)}
+.grid{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card b{display:block;margin-bottom:4px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+.help{font-size:.82rem;color:var(--mut);margin:-2px 0 6px}
+input[type=text],input[type=tel],input[type=number],select{width:100%;padding:14px;border-radius:10px;border:1px solid var(--line);background:#0e1627;color:var(--ink);font-size:1rem}
+input:focus,select:focus{outline:2px solid var(--acc);border-color:transparent}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.9rem;color:var(--mut);font-weight:400}
+.chk input{margin-top:4px;width:20px;height:20px;flex:none}
+.err{color:var(--bad);font-size:.85rem;min-height:1.1em;margin-top:4px}
+.sim{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.sim .card{text-align:center}
+.big{font-size:1.5rem;font-weight:800}
+.save{color:var(--acc)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0;color:var(--mut)}
+.note{font-size:.8rem;color:var(--mut)}
+.tag{display:inline-block;background:#1f2a44;color:var(--warn);border-radius:999px;padding:4px 10px;font-size:.78rem;font-weight:700}
+.launch{margin:10px 0 0;font-size:1.05rem;font-weight:700}
+.launch em{font-style:normal;background:var(--warn);color:#1a1300;border-radius:8px;padding:2px 10px;margin-left:4px}
+.hl{font-size:clamp(1.9rem,8vw,2.7rem);line-height:1.1;font-weight:900;margin:14px 0 12px}
+.hl em{font-style:normal;color:var(--acc)}
+.lead p{font-size:1.05rem}
+.hi{font-size:1.25rem;font-weight:800;margin:0 0 14px}
+/* mockup (light mode) */
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
+.shot{flex:none;scroll-snap-align:center;width:232px}
+.shot figcaption{margin-top:10px;font-size:.85rem;color:var(--mut);text-align:center}
+.phone{width:232px;height:470px;border-radius:32px;border:7px solid #1f2a44;background:#f4f7fb;color:#0b1220;overflow:hidden;position:relative;font-size:12px;line-height:1.35;display:flex;flex-direction:column}
+.sb{display:flex;justify-content:space-between;padding:8px 14px 2px;font-size:10px;font-weight:700;color:#5b6b86}
+.ph-h{display:flex;justify-content:space-between;align-items:center;padding:6px 14px}
+.ph-h b{font-size:13px}
+.ph-h .brandsm{color:#16a34a;font-weight:800}
+.sw{display:flex;align-items:center;gap:6px;font-weight:700;color:#16a34a}
+.sw i{display:inline-block;width:30px;height:17px;border-radius:99px;background:#22c55e;position:relative}
+.sw i:after{content:"";position:absolute;right:2px;top:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+.map{flex:1;min-height:0;background:#e6edf6;position:relative}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.sheet{background:#fff;border-top:1px solid #dbe3ef;padding:10px 12px;border-radius:16px 16px 0 0;margin-top:-12px;position:relative}
+.sheet h4{margin:0 0 4px;font-size:13px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.kpi{background:#f4f7fb;border:1px solid #dbe3ef;border-radius:10px;padding:6px 8px;flex:1;text-align:center}
+.kpi b{display:block;font-size:14px}
+.kpi span{font-size:10px;color:#5b6b86}
+.pbtn{display:block;text-align:center;background:#22c55e;color:#04210f;font-weight:800;border-radius:10px;padding:9px;margin-top:8px}
+.pbtn.alt{background:#fff;border:1px solid #dbe3ef;color:#0b1220}
+.nav{display:flex;justify-content:space-around;border-top:1px solid #dbe3ef;background:#fff;padding:7px 0 9px;font-size:10px;color:#5b6b86}
+.nav .on{color:#16a34a;font-weight:800}
+.big2{font-size:22px;font-weight:900}
+.chip{display:inline-block;background:#fff7d6;color:#7a5a00;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700}
+.chip.g{background:#dcfce7;color:#166534}
+.bars{display:flex;align-items:flex-end;gap:6px;height:84px;padding:4px 2px 0}
+.bars div{flex:1;background:#bbf7d0;border-radius:5px 5px 0 0}
+.bars div.t{background:#22c55e}
+.days{display:flex;gap:6px;font-size:9px;color:#5b6b86;text-align:center;margin-bottom:6px}
+.days span{flex:1}
+.li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eef2f8}
+.body{padding:6px 14px;flex:1;min-height:0}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.badge{display:inline-block;border:1px solid var(--bad);color:var(--bad);border-radius:999px;padding:6px 14px;font-weight:800;font-size:1.05rem;text-decoration:line-through;text-decoration-thickness:2px}
+.sub{font-weight:700;color:var(--acc)}
+footer{padding:28px 0 60px;font-size:.8rem;color:var(--mut)}
+#ok{display:none}
+</style>
+</head>
+<body>
+
+<!--
+  ==== CONFIGURAÇÃO (no bloco <script> no final do arquivo; troque antes de publicar) ====
+  BRAND: nome da marca (provisório) | WHATSAPP: DDI+DDD+número, só dígitos
+  ENDPOINT: URL que recebe os cadastros (opcional) | PIXEL_ID: Pixel da Meta (opcional)
+  PRIVACY_URL: política de privacidade | FEE_FIXED e FEE_PCT: usados só na conta do simulador
+-->
+
+<div class="wrap">
+  <header><span>●</span> <span class="brand">[MARCA]</span> · São Sebastião (DF)</header>
+
+  <main>
+    <p><span class="tag">Pré-cadastro de motoristas</span></p>
+    <p class="launch">Lançamento da plataforma: <em>novembro</em></p>
+
+    <div class="hl"><em>Cansado do valor inconstante das corridas e dos banimentos?</em></div>
+    <p class="hi">Ei, motorista de aplicativo de São Sebastião</p>
+    <div class="lead">
+      <p>Cansado da forma como as corridas são escolhidas?</p>
+      <p>Desenvolvemos o aplicativo que te atende de verdade. <b>Feito por quem também é motorista de aplicativo.</b></p>
+      <p class="sub">De motorista para motorista.</p>
+    </div>
+    <a class="btn" href="#cadastro" id="cta1">Quero me cadastrar</a>
+
+    <section>
+      <div class="grid">
+        <div class="card"><b>Taxa clara</b>Você sabe o que vai pagar: valor fixo por mês e desconto de no máximo 10% por corrida. Ou seja, você sempre vai receber 90% ou mais em cada corrida.</div>
+        <div class="card"><b>Preço justo por km</b>Chega de receber
+          <div class="badges"><span class="badge">1,10</span><span class="badge">1,20</span><span class="badge">1,30</span></div>
+          por corrida.</div>
+        <div class="card"><b>Feito para a cidade</b>Motoristas de São Sebastião entram primeiro.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Simule a diferença de taxa</h2>
+      <p class="mut">Exemplo de conta, não é promessa de ganho. Ajuste para a sua realidade.</p>
+
+      <label for="rides">Corridas por mês</label>
+      <div class="help">Coloque aqui quantas corridas você faz por mês.</div>
+      <input id="rides" type="number" inputmode="numeric" min="1" max="1500" value="275">
+
+      <label for="ticket">Valor médio da corrida (R$)</label>
+      <input id="ticket" type="number" inputmode="decimal" min="1" max="500" step="0.5" value="15.00">
+
+      <label for="other">Taxa cobrada em outros aplicativos (%)</label>
+      <input id="other" type="number" inputmode="decimal" min="0" max="60" step="1" value="25">
+
+      <div class="sim">
+        <div class="card"><div class="mut">Você paga hoje</div><div class="big" id="feeOther">R$ 0</div></div>
+        <div class="card"><div class="mut">Você pagaria na [MARCA]</div><div class="mut" style="font-weight:700">assinatura +</div><div class="big" id="feeUs">R$ 0</div></div>
+      </div>
+      <div class="card" style="margin-top:10px;text-align:center"><div class="mut">Diferença por mês</div><div class="big save" id="diff">R$ 0</div></div>
+    </section>
+
+    <section>
+      <h2>Veja como vai ser o app</h2>
+      <p class="mut">Telas ilustrativas, ainda em desenvolvimento. Valores são exemplos.</p>
+      <div class="shots">
+
+        <figure class="shot" style="margin:0">
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+            <div class="ph-h"><span class="brandsm brand">[MARCA]</span><span class="sw">Online <i></i></span></div>
+            <div class="map">
+              <svg viewBox="0 0 220 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="220" height="260" fill="#e6edf6"/>
+                <g stroke="#fff" stroke-width="9" fill="none"><path d="M-10 70 L230 90"/><path d="M-10 170 L230 150"/><path d="M60 -10 L80 270"/><path d="M160 -10 L140 270"/></g>
+                <g stroke="#fff" stroke-width="4" fill="none"><path d="M-10 120 L230 125"/><path d="M110 -10 L110 270"/></g>
+                <rect x="14" y="14" width="40" height="44" rx="6" fill="#d7e8dc"/><rect x="170" y="190" width="40" height="50" rx="6" fill="#d7e8dc"/>
+                <circle cx="108" cy="124" r="22" fill="#22c55e" fill-opacity=".2"/><circle cx="108" cy="124" r="8" fill="#22c55e" stroke="#fff" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="sheet">
+              <h4>Procurando corridas...</h4>
+              <div class="row"><div class="kpi"><b>8</b><span>corridas hoje</span></div><div class="kpi"><b>R$ 143</b><span>hoje (exemplo)</span></div></div>
+              <div class="pbtn alt">Ficar offline</div>
+            </div>
+            <div class="nav"><span class="on">Início</span><span>Ganhos</span><span>Perfil</span></div>
+          </div>
+          <figcaption>1. Fique online</figcaption>
+        </figure>
+
+        <figure class="shot" style="margin:0">
+          <div class="phone">
+            <div class="sb"><span>9:42</span><span>●●● 5G</span></div>
+            <div class="ph-h"><b>Nova corrida</b><span class="chip">12 s</span></div>
+            <div class="map">
+              <svg viewBox="0 0 220 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="220" height="260" fill="#e6edf6"/>
+                <g stroke="#fff" stroke-width="9" fill="none"><path d="M-10 70 L230 90"/><path d="M-10 170 L230 150"/><path d="M60 -10 L80 270"/><path d="M160 -10 L140 270"/></g>
+                <path d="M70 200 L74 160 L150 150 L152 80" stroke="#16a34a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="70" cy="200" r="8" fill="#fff" stroke="#16a34a" stroke-width="4"/>
+                <rect x="144" y="72" width="16" height="16" rx="3" fill="#0b1220"/>
+              </svg>
+            </div>
+            <div class="sheet">
+              <div class="row"><div><b>Centro → Morro Azul</b><div style="color:#5b6b86">6,2 km · 14 min</div></div><div class="big2">R$ 12,40</div></div>
+              <div style="margin-top:6px"><span class="chip g">Preço calculado por km</span></div>
+              <div class="row" style="margin-top:6px"><span style="color:#5b6b86">Você recebe</span><b>R$ 11,16 (90%)</b></div>
+              <div class="row"><div class="pbtn alt" style="flex:1">Recusar</div><div class="pbtn" style="flex:1">Aceitar</div></div>
+            </div>
+            <div class="nav"><span class="on">Início</span><span>Ganhos</span><span>Perfil</span></div>
+          </div>
+          <figcaption>2. Veja a corrida e quanto recebe</figcaption>
+        </figure>
+
+        <figure class="shot" style="margin:0">
+          <div class="phone">
+            <div class="sb"><span>18:05</span><span>●●● 5G</span></div>
+            <div class="ph-h"><b>Seus ganhos</b><span class="chip g">Assinatura ativa</span></div>
+            <div class="body">
+              <div style="color:#5b6b86">Esta semana (exemplo)</div>
+              <div class="big2">R$ 612,00</div>
+              <div class="bars"><div style="height:45%"></div><div style="height:62%"></div><div style="height:38%"></div><div style="height:80%"></div><div class="t" style="height:100%"></div><div style="height:55%"></div><div style="height:20%"></div></div>
+              <div class="days"><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span><span>D</span></div>
+              <div class="li"><span>Hoje · 8 corridas</span><b>R$ 143,00</b></div>
+              <div class="li"><span>Desconto da plataforma</span><b>no máx. 10%</b></div>
+              <div class="li" style="border:0"><span>Você recebe</span><b>90% ou mais</b></div>
+            </div>
+            <div class="nav"><span>Início</span><span class="on">Ganhos</span><span>Perfil</span></div>
+          </div>
+          <figcaption>3. Acompanhe seus ganhos</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section id="cadastro">
+      <h2>Faça seu pré-cadastro</h2>
+      <p class="mut">Leva 1 minuto.</p>
+      <form id="f" novalidate autocomplete="on">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome">
+        <div class="err" id="e-nome"></div>
+
+        <label for="zap">WhatsApp (com DDD)</label>
+        <input id="zap" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(61) 9 0000-0000">
+        <div class="err" id="e-zap"></div>
+
+        <label for="ano">Ano do carro</label>
+        <select id="ano" name="ano_carro"><option value="">Selecione</option></select>
+        <div class="err" id="e-ano"></div>
+
+        <label class="chk"><input id="lgpd" type="checkbox">
+          <span>Concordo em receber contato da [MARCA] pelo WhatsApp e que meus dados sejam usados para o pré-cadastro, conforme a <a href="#" id="priv" style="color:var(--acc)">política de privacidade</a>. Posso pedir a exclusão a qualquer momento.</span></label>
+        <div class="err" id="e-lgpd"></div>
+
+        <button class="btn" id="send" type="submit">Enviar pré-cadastro</button>
+        <div class="err" id="e-form"></div>
+      </form>
+
+      <div id="ok" class="card">
+        <h2>Pré-cadastro recebido!</h2>
+        <p class="mut">Obrigado, <span id="okname"></span>. Toque abaixo para falar com a gente no WhatsApp.</p>
+        <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perguntas frequentes</h2>
+      <details><summary>Quando as corridas começam?</summary><p>A plataforma será lançada em novembro.</p></details>
+      <details><summary>Que carro posso usar?</summary><p>Carros com fabricação de 2017 em diante.</p></details>
+      <details><summary>Como o preço da corrida é definido?</summary><p>O preço é calculado por km. Regiões de difícil acesso ou sem asfalto pagam mais.</p></details>
+      <details><summary>O que vocês fazem com meus dados?</summary><p>Usamos nome, WhatsApp e ano do carro só para falar sobre o pré-cadastro. Você pode pedir a exclusão quando quiser.</p></details>
+      <details><summary>Quanto custa?</summary><p>R$ 199,00 por mês.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span class="brand">[MARCA]</span>. Pré-cadastro sem garantia de ganhos. Os valores de simulação são exemplos.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // ==== CONFIGURAÇÃO ====
+  var BRAND = "[MARCA]";
+  var WHATSAPP = "5561900000000";   // troque pelo número real (DDI+DDD+número)
+  var ENDPOINT = "";                 // URL que recebe os cadastros (opcional)
+  var PIXEL_ID = "";                 // ID do Pixel da Meta (opcional)
+  var PRIVACY_URL = "#";             // link da política de privacidade
+  var FEE_FIXED = 199, FEE_PCT = 0.10; // mensalidade (entra na diferença do simulador) e % por corrida
+  var MIN_YEAR = 2017;               // ano mínimo de fabricação do carro
+
+  var $ = function(id){return document.getElementById(id);};
+
+  document.querySelectorAll(".brand").forEach(function(e){e.textContent = BRAND;});
+  document.title = "Pré-cadastro de motoristas | " + BRAND + " São Sebastião";
+  $("priv").href = PRIVACY_URL;
+
+  // Pixel
+  if (PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+
+  // Anos do carro
+  var sel = $("ano"), y = new Date().getFullYear() + 1;
+  for (var i = y; i >= MIN_YEAR; i--) { var o = document.createElement("option"); o.value = i; o.textContent = i; sel.appendChild(o); }
+  var older = document.createElement("option"); older.value = "anterior a " + MIN_YEAR; older.textContent = "Anterior a " + MIN_YEAR; sel.appendChild(older);
+
+  // UTMs
+  var qs = new URLSearchParams(location.search), utm = {};
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid"].forEach(function(k){ if(qs.get(k)) utm[k]=qs.get(k); });
+
+  // Simulador
+  var brl = function(n){return "R$ " + Math.round(n).toLocaleString("pt-BR");};
+  function sim(){
+    var r = Math.max(0, parseFloat($("rides").value)||0);
+    var t = Math.max(0, parseFloat($("ticket").value)||0);
+    var p = Math.min(100, Math.max(0, parseFloat($("other").value)||0))/100;
+    var gross = r*t, a = gross*p, b = FEE_FIXED + gross*FEE_PCT;
+    $("feeOther").textContent = brl(a);
+    $("feeUs").textContent = brl(gross*FEE_PCT);
+    var d = a-b;
+    $("diff").textContent = (d>=0 ? "+ " : "- ") + brl(Math.abs(d));
+    $("diff").className = "big " + (d>=0 ? "save" : "");
+  }
+  ["rides","ticket","other"].forEach(function(id){$(id).addEventListener("input", sim);});
+  sim();
+
+  // Máscara de WhatsApp
+  $("zap").addEventListener("input", function(){
+    var d = this.value.replace(/\D/g,"").slice(0,11), s = d;
+    if (d.length>2) s = "("+d.slice(0,2)+") "+d.slice(2);
+    if (d.length>7) s = "("+d.slice(0,2)+") "+d.slice(2,d.length-4)+"-"+d.slice(-4);
+    this.value = s;
+  });
+
+  $("cta1").addEventListener("click", function(){ if (window.fbq) fbq('trackCustom','CliqueCadastro'); });
+
+  function setErr(id, msg){ $(id).textContent = msg||""; return !msg; }
+
+  $("f").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var nome = $("nome").value.trim(), zap = $("zap").value.replace(/\D/g,""), ano = $("ano").value;
+    var ok = true;
+    ok = setErr("e-nome", nome.length < 2 ? "Informe seu nome." : "") && ok;
+    ok = setErr("e-zap", (zap.length !== 11 || zap.charAt(2) !== "9") ? "Informe o WhatsApp com DDD (11 dígitos)." : "") && ok;
+    ok = setErr("e-ano", !ano ? "Selecione o ano do carro." : "") && ok;
+    ok = setErr("e-lgpd", !$("lgpd").checked ? "É preciso concordar para enviar." : "") && ok;
+    if (!ok) return;
+
+    var btn = $("send"); btn.disabled = true; btn.textContent = "Enviando...";
+    var payload = Object.assign({
+      nome: nome, whatsapp: "55"+zap, ano_carro: ano,
+      consentimento_lgpd: true, data: new Date().toISOString(), pagina: location.origin + location.pathname
+    }, utm);
+
+    function done(){
+      if (window.fbq) fbq('track','Lead');
+      $("f").style.display = "none";
+      $("okname").textContent = nome.split(" ")[0];
+      var msg = "Olá! Fiz meu pré-cadastro de motorista no " + BRAND + ". Meu nome é " + nome + ", carro " + ano + ".";
+      $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+      $("ok").style.display = "block";
+      $("ok").scrollIntoView({behavior:"smooth", block:"center"});
+    }
+
+    if (ENDPOINT) {
+      fetch(ENDPOINT, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(payload)})
+        .then(done)
+        .catch(function(){ btn.disabled=false; btn.textContent="Enviar pré-cadastro"; setErr("e-form","Não foi possível enviar. Tente de novo."); });
+    } else { done(); }
+  });
+})();
+</script>
+</body>
+</html>
